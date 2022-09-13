@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	var bannersSwiper = new Swiper('#banners-slider', {
 		speed: 1200,
 		loop: true,
-		/*autoplay: {
+		autoplay: {
 			delay: 5000,
-		},*/
+		},
 		slidesPerView: 'auto',
 		autoHeight: true,
 		pagination: {
@@ -46,13 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	})
 
-	/*$("#banners-slider").mouseenter(function () {
+	$("#banners-slider").mouseenter(function () {
 		bannersSwiper.autoplay.stop();
 	});
 
 	$("#banners-slider").mouseleave(function () {
 		bannersSwiper.autoplay.start();
-	});*/
+	});
 
 	var recSwiper = new Swiper('#rec-slider', {
 		loop: true,
