@@ -1,5 +1,5 @@
 {
-	"name": "PROJCOM",
+	"name": "GI",
 	"version": "5.0.0",
 	"description": "",
 	"main": "index.js",
@@ -10,7 +10,7 @@
 	],
 	"license": "ISC",
 	"scripts": {
-		"start": "gulp"
+		"deploy": "gh-pages -d dist"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.17.8",
@@ -43,6 +43,15 @@
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
+		"gh-pages": "^4.0.0",
 		"jquery": "^3.6.0"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/puteeva-anastasia-freelance/-GI.git"
+	},
+	"bugs": {
+		"url": "https://github.com/puteeva-anastasia-freelance/-GI/issues"
+	},
+	"homepage": "https://puteeva-anastasia-freelance.github.io/-GI/"
 }
