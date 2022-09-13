@@ -58,6 +58,7 @@
 			@media (max-width: 576px)
 				margin-left: 2.8%
 				text-align: center
+
 	
 	&__includes
 		font-family: $tenor-font
@@ -95,6 +96,9 @@
 			padding-left: 8.3%
 			width: 79%
 			padding-bottom: 1%
+		
+		@media (max-width: 359.98px)
+			width: 100%
 			
 	&__list	
 		list-style-type: none
@@ -145,6 +149,7 @@
 			margin-left: 8.3%
 			margin-top: -8px
 			flex-wrap: wrap
+			margin-right: 8.3%
 	
 	&__prices
 		@media (max-width: 992px)
@@ -155,6 +160,9 @@
 			margin-top: 20px
 			width: 40%
 			margin-bottom: 17px
+		
+		@media (max-width: 359.98px)
+			width: 100%
 
 	&__price
 		font-weight: 500
@@ -205,7 +213,10 @@
 			margin-left: 36.5px
 			line-height: 137%
 			margin-top: 4px
-			max-width: 220px
+			max-width: 207px
+		
+		@media (max-width: 359.98px)
+			margin-left: 20px
 
 	&__button
 		top: 89.5%	
@@ -290,30 +301,83 @@
 	&__wrap-2
 		padding-top: 15.1%
 		padding-left: 4.1%
+		padding-right: 4.1%
 		padding-bottom: 12.2%
 		background: right bottom / 50% 100% url(../img/dist/banner-2.jpg) no-repeat #F1E5DF
+
+		@media (max-width: 1500px)
+			padding-left: 40px
+			padding-right: 40px
+		
+		@media (max-width: 1350px)
+			background: linear-gradient(to right, rgba(#F1E5DF, 1), rgba(#F1E5DF, 0.4)), url(../img/dist/banner-2.jpg)
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: right bottom
+			background-color: #F1E5DF
+		
+		@media (max-width: 768px)
+			background: linear-gradient(to top, rgba(#F1E5DF, 0), rgba(#F1E5DF, 0)), url(../img/dist/banner-2.jpg)
+			background-position: right -135px
+			background-size: contain
+			background-repeat: no-repeat
+			background-color: #F1E5DF
+			padding-top: 85%
+			padding-left: 8.3%
+			padding-right: 8.3%
+		
+		@media (max-width: 576px)
+			padding-left: 15px
+			padding-right: 15px
+			background-position-y: -50px
 
 	&__title-2
 		max-width: 50%
 		margin-bottom: 1.15%
+
+		@media (max-width: 768px)
+			max-width: 80%
+
+		@media (max-width: 576px)
+			max-width: 100%
+			text-align: center
 	
 	&__list-2
 		margin-left: 7px
 
+		@media (max-width: 768px)
+			margin-left: 0
+
 		&-item
-			font-size: 1.3vw
+			@include adaptiv-font(25, 12)
 			line-height: 200%
 			padding-left: 21px
+
+			@media (max-width: 576px)
+				padding-left: 10.5px
 
 			&::before
 				width: 4px
 				height: 4px
+
+				@media (max-width: 768px)
+					width: 2px
+					height: 2px
 	
 	&__buy-2
 		margin: 0
 		display: flex
 		align-items: center
 		margin-top: 3.3%
+
+		@media (max-width: 768px)
+			width: 370px
+		
+		@media (max-width: 576px)
+			width: 320px
+		
+		@media (max-width: 359.98px)
+			width: 250px
 	
 	&__button-buy
 		margin-bottom: 1%
@@ -323,11 +387,34 @@
 		padding-left: 4.65%
 		padding-bottom: 14.1%
 		padding-top: 15.1%
-		background: left bottom / cover url(../img/dist/banner-3.png) no-repeat #F1E5DF
+		background: left bottom / cover url(../img/dist/banner-3.png) no-repeat #F7E4D5
+
+		@media (max-width: 1500px)
+			padding-right: 40px
+			padding-left: 40px
+		
+		@media (max-width: 768px)
+			background: linear-gradient(to top, rgba(#F7E4D5, 0), rgba(#F7E4D5, 0)), url(../img/dist/banner-3.png)
+			background-position: right -30px
+			background-size: 178%
+			background-repeat: no-repeat
+			padding-top: 81%
+			background-color: #F7E4D5
+			padding-left: 8.3%
+			padding-right: 8.3%
+		
+		@media (max-width: 665px)
+			padding-top: 90%
+		
+		@media (max-width: 576px)
+			padding-top: 97%
+		
+		@media (max-width: 450px)
+			padding-top: 88%
 	
 	&__offer
 		font-family: $tenor-font
-		font-size: 1.56vw
+		@include adaptiv-font(30, 15.8)
 		line-height: 130%
 		text-transform: uppercase
 		color: #845440
@@ -336,47 +423,148 @@
 		max-width: 40%	
 		margin-bottom: 2.5%
 
+		@media (max-width: 1350px)
+			max-width: 45%
+		
+		@media (max-width: 992px)
+			max-width: 57.5%
+		
+		@media (max-width: 768px)
+			max-width: 400px
+		
+		@media (max-width: 576px)
+			max-width: 100%
+			text-align: center
+
 	&__sponges
 		display: flex
 		align-items: center
 		margin-bottom: 5.3%
 
+		@media (max-width: 450px)
+			flex-direction: column
+		
+		@media (max-width: 400px)
+			margin-top: 20px
+			margin-bottom: 30px
+
 		&-col
 			margin-right: 6.1%
 
+			@media (max-width: 992px)
+				margin-right: 5%
+			
+			@media (max-width: 768px)
+				margin-right: 10%
+			
+			@media (max-width: 576px)
+				margin-right: 0
+				width: 100%
+
 		&-item
 			font-weight: 400
-			font-size: 1.3vw
+			@include adaptiv-font(25, 13.5)
 			line-height: 179%
 			display: block
 		
 		&-brown
 			color: rgba(132, 84, 64, 1)
+		
+	&__txt-3
+		display: none
+
+		@media (max-width: 768px)
+			display: inline-block
+			margin-top: 30px
+			margin-bottom: 30px
+		
+		@media (max-width: 576px)
+			margin-top: 0
+			margin-bottom: 0
 
 	&__wrap-4
 		padding-top: 15.1%
 		padding-bottom: 11.1%
-		background: left bottom / cover url(../img/dist/banner-4.jpg) no-repeat #F1E5DF
+		background: left bottom / cover url(../img/dist/banner-4.jpg) no-repeat rgba(#f2dacd, 1)
+
+		@media (max-width: 1350px)
+			background-position-x: -30px
+		
+		@media (max-width: 992px)
+			background-position-x: -60px
+		
+		@media (max-width: 768px)
+			background-size: 170%
+			background-repeat: no-repeat
+			background-position: -400px -150px
+			padding-top: 80%
+			background-color: rgba(#f2dacd, 1)
+		
+		@media (max-width: 576px)
+			background-position: -225px -83px
+			padding-top: 85%
 	
 	&__title-4
 		margin-left: 4.65%
+		margin-right: 4.65%
 		margin-bottom: 2.4%
+
+		@media (max-width: 1500px)
+			margin-left: 40px
+			margin-right: 40px
+		
+		@media (max-width: 768px)
+			margin-left: 8.3%
+			margin-right: 8.3%
 	
 	&__inner-4
 		padding-left: 4.6%
 		padding-right: 5%
-		max-width: 45.6%	
+		max-width: 875.5px
 		padding-top: 3.2%
 		box-sizing: border-box
 		padding-bottom: 3.6%
 		margin-bottom: 1.6%
+
+		@media (max-width: 1500px)
+			padding-left: 40px
+		
+		@media (max-width: 768px)
+			padding-left: 8.3%
+		
+		@media (max-width: 576px)
+			width: 95%
 	
 	&__present
-		font-size: 1.3vw
+		@include adaptiv-font(25, 13.5)
 		line-height: 179%
 		display: block
+
+		@media (max-width: 576px)
+			br
+				display: none
 	
 	&__choose
-		font-size: 0.94vw
+		@include adaptiv-font(18, 10)
 		display: block
 		margin-top: 3%
+	
+	&__buy-4
+		@media (max-width: 1500px)
+			margin-left: 40px
+			margin-right: 40px
+			width: auto
+		
+		@media (max-width: 992px)
+			flex-direction: column
+			align-items: flex-start
+		
+		@media (max-width: 768px)
+			margin-top: 40px
+			margin-right: 8.3%
+			margin-left: 8.3%
+		
+	&__txt-4
+		@media (max-width: 768px)
+			margin-top: 40px
+			margin-bottom: 40px
