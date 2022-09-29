@@ -1,7 +1,12 @@
+/*import '/app/libs/lightgallery/dist/lightgallery.min.js'
+import '/app/libs/lightgallery/dist/plugins/video/lg-video.min.js'
 import '/app/libs/selectize/dist/js/standalone/selectize.min.js'
 import '/app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js'
 import '/app/libs/swiper/swiper-bundle.min.js'
-import '/app/libs/jQuery.equalHeights/jquery.equalheights.js'
+import '/app/libs/jQuery.equalHeights/jquery.equalheights.js'*/
+/*import '/app/libs/lightgallery/dist/plugins/vimeoThumbnail/lg-vimeo-thumbnail.min.js'
+import '/app/libs/lightgallery/dist/plugins/thumbnail/lg-thumbnail.min.js'
+import '/app/libs/lightgallery/dist/plugins/fullscreen/lg-fullscreen.min.js'*/
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -106,9 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	var galleryThumbs = new Swiper('.gallery-thumbs', {
 		spaceBetween: 20,
 		loop: true,
-		freeMode: true,
-		loopedSlides: 5, //looped slides should be the same
-		watchSlidesProgress: true,
 		breakpoints: {
 			320: {
 				slidesPerView: 3,
@@ -117,9 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
 				slidesPerView: 4,
 			},
 		},
+		navigation: {
+			nextEl: '.swiper-button-next-thumbs',
+			prevEl: '.swiper-button-prev-thumbs',
+		},
 	});
 
-	var galleryTop = new Swiper('.gallery-top', {
+	/*var galleryTop = new Swiper('.gallery-top', {
 		spaceBetween: 10,
 		loop: true,
 		loopedSlides: 5, //looped slides should be the same
@@ -134,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			el: '.card__pagination',
 			clickable: true,
 		},
-	});
+	}); */
 
 	$('.choose-quantity__button.minus').click(function () {
 		let $input = $(this).parent().find('.choose-quantity__input');
@@ -165,6 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	$('#country').selectize();
 
 	$('#region').selectize();
+
+	$('#language').selectize();
 
 	$("#message").keyup(function (e) {
 		$(this).height(30);
@@ -219,4 +227,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		$('.contact-us__title').text('Напишите нам');
 	}
 
+	lightGallery(document.getElementById("gallery-video"), {
+		speed: 500,
+		plugins: [lgVideo, , lgThumbnail],
+		thumbnail: true,
+	});
+
+
+
 })
+

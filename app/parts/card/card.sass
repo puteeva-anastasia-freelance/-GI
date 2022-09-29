@@ -27,9 +27,26 @@
 		background-size: contain
 		background-position: center
 		background-repeat: no-repeat
+		cursor: default
 
 	.gallery-top
 		height: 76.7%
+		display: flex
+		align-items: center
+
+		&__item
+			height: 100%
+			
+			&:first-child
+				.img-responsive
+					display: block
+
+		.img-responsive
+			width: 100%
+			object-fit: cover
+			height: 100%
+			cursor: pointer
+			display: none
 
 		@media (max-width: 1350.98px)
 			height: 61.6%
@@ -50,14 +67,6 @@
 
 		.swiper-slide
 			background-size: cover
-			opacity: 0.4
-			cursor: pointer
-
-			&:hover
-				opacity: 1
-			
-			&-thumb-active
-				opacity: 1
 	
 	.swiper-button-prev-thumbs
 		left: -6.8%
@@ -539,5 +548,3 @@
 		
 		&:hover:after
 			transform: scale(1.1)
-
-		

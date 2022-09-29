@@ -41,43 +41,20 @@ function browsersync() {
 }
 
 function scripts() {
-	return src(['app/js/*.js', '!app/js/*.min.js'])
-		.pipe(webpackStream({
-			mode: 'production',
-			performance: { hints: false },
-			plugins: [
-				new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery', 'window.jQuery': 'jquery' }), // jQuery (npm i jquery)
-			],
-			module: {
-				rules: [
-					{
-						test: /\.m?js$/,
-						exclude: /(node_modules)/,
-						use: {
-							loader: 'babel-loader',
-							options: {
-								presets: ['@babel/preset-env'],
-								plugins: ['babel-plugin-root-import']
-							}
-						}
-					}
-				]
-			},
-			optimization: {
-				minimize: true,
-				minimizer: [
-					new TerserPlugin({
-						terserOptions: { format: { comments: false } },
-						extractComments: false
-					})
-				]
-			},
-		}, webpack)).on('error', (err) => {
-			this.emit('end')
-		})
-		.pipe(concat('app.min.js'))
-		.pipe(dest('app/js'))
-		.pipe(browserSync.stream())
+	return src([
+		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/lightgallery/dist/lightgallery.min.js',
+		'app/libs/lightgallery/dist/plugins/video/lg-video.min.js',
+		'app/libs/lightgallery/dist/plugins/thumbnail/lg-thumbnail.min.js',
+		'app/libs/selectize/dist/js/standalone/selectize.min.js',
+		'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js',
+		'app/libs/swiper/swiper-bundle.min.js',
+		'app/libs/jQuery.equalHeights/jquery.equalheights.js',
+		'app/js/app.js', // Всегда в конце
+		])
+		.pipe(concat('app.min.js')) // Конкатенируем в один файл
+		.pipe(dest('app/js/')) // Выгружаем готовый файл в папку назначения
+		.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
 
 function styles() {
@@ -106,13 +83,21 @@ function buildcopy() {
 		'{app/js,app/css}/*.min.*',
 		'app/img/**/*.*',
 		'!app/img/src/**/*',
-		'app/fonts/**/*'
+		'app/fonts/**/*',
+		'app/video/**/*',
+		'app/libs/selectize/dist/css/selectize.css',
+		'app/libs/swiper/swiper-bundle.min.css',
+		'app/libs/lightgallery/dist/css/lightgallery.css',
+		'app/libs/lightgallery/dist/css/lg-video.css',
+		'app/libs/lightgallery/dist/css/lg-thumbnail.css',
+		'app/libs/lightgallery/dist/fonts/**/*',
+		'app/libs/lightgallery/dist/images/**/*',
 	], { base: 'app/' })
 	.pipe(dest('dist'))
 }
 
 async function buildhtml() {
-	let includes = new ssi('app/', 'dist/', '/**/*.html')
+	let includes = new ssi('app/', 'dist/', '/*.html')
 	includes.compile()
 	del('dist/parts', { force: true })
 }
